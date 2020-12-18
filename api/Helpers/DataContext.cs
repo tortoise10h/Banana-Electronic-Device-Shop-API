@@ -22,6 +22,7 @@ namespace api.Helpers
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<GoodsDeliveryNote> GoodsDeliveryNotes { get; set; }
         public DbSet<GoodsDeliveryDetail> GoodsDeliveryDetails { get; set; }
+        public DbSet<QuantityLog> QuantityLogs { get; set; }
 
         protected readonly IConfiguration Configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
