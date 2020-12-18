@@ -34,14 +34,11 @@ namespace api.Contracts.V1
 
         public static class GoodsReceivingNotes
         {
-            public const string Create = Base + "/goodsReceivingNotes";
+            public const string CreateGoodsReceivingNotes = Base + "/goodsReceivingNotes";
+            public const string DeleteGoodsReceivingNotes = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}";
             public const string GetAll = Base + "/goodsReceivingNotes";
             public const string GetById = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}";
-            public const string Update = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}";
-            public const string Delete = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}";
-            public const string AddProductToGoodReceivingNote = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}/goodsDeliveryDetails";
-            public const string BulkUpdateProductInGoodsReceivingNote = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}/goodsReceivingDetails/bulkUpdate";
-            public const string BulkDeleteProductInGoodsReceivingNote = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}/goodsReceivingDetails/bulkDelete";
+            public const string CreateGoodsReceivingDetails = Base + "/goodsReceivingNotes/{goodsReceivingNoteId}/goodsReceivingDetails";
         }
 
         public static class Orders

@@ -54,6 +54,11 @@ namespace api.Extensions
             modelBuilder
                 .Entity<GoodsDeliveryDetail>()
                 .HasQueryFilter(gdd => EF.Property<bool>(gdd, "IsDeleted") == false);
+
+            /** QuantityLog */
+            modelBuilder
+                .Entity<QuantityLog>()
+                .HasQueryFilter(gdd => EF.Property<bool>(gdd, "IsDeleted") == false);
         }
 
         public static void Seed(this ModelBuilder modelBuilder)

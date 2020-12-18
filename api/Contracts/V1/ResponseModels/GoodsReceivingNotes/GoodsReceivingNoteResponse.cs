@@ -10,15 +10,9 @@ namespace api.Contracts.V1.ResponseModels.GoodsReceivingNotes
     public class GoodsReceivingNoteResponse
     {
         public int Id { get; set; }
-        public GoodsReceivingNoteStatus status { get; set; }
         public string SupplierName { get; set; }
-        public int SupplierId { get; set; }
-        public string Decription { get; set; }
-        public string ExceptionReason { get; set; }
+        public string Description { get; set; }
         public double TotalPrice { get; set; }
-        public int PurchaseProposalFormId { get; set; }
-
         public List<GoodsReceivingDetailResponse> GoodsReceivingDetails { get; set; }
-        public UserResponse User { get; set; }
     }
 }
