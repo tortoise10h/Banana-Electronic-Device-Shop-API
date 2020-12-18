@@ -15,6 +15,7 @@ using api.Contracts.V1.ResponseModels.Auth;
 using api.Contracts.V1.ResponseModels.User;
 using api.Entities;
 using api.Helpers;
+using api.Common.Enums;
 
 namespace api.Services
 {
@@ -159,6 +160,9 @@ namespace api.Services
 
             if (!createdUser.Succeeded)
             {
+                /** Register user will be Customer */
+                var result1 = await _userManager.AddToRoleAsync(newUser, RoleName.Customer);
+
                 return new CreateResult<ApplicationUser>
                 {
                     IsSuccess = false,

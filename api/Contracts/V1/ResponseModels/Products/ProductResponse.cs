@@ -21,5 +21,6 @@ namespace api.Contracts.V1.ResponseModels.Products
         public DateTime? LastModifiedAt { get; set; }
 
         public CategoryResponse Category { get; set; }
+        public QuantityLogResponse QuantityLog { get; set; }
     }
 }

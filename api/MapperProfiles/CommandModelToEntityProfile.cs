@@ -3,6 +3,8 @@ using api.CQRS.Categories.Commands.UpdateCategories;
 using api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails;
 using api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingNotes;
 using api.CQRS.GoodsReceivingNotes.Commands.DeleteGoodsReceivingNotes;
+using api.CQRS.Products.Commands.CreateProducts;
+using api.CQRS.Products.Commands.UpdateProducts;
 using api.Entities;
 using AutoMapper;
 
@@ -19,6 +21,9 @@ namespace api.MapperProfiles
             CreateMap<CreateGoodsReceivingNotesCommand, GoodsReceivingNote>();
             CreateMap<DeleteGoodsReceivingNotesCommand, GoodsReceivingNote>();
             CreateMap<CreateGoodsReceivingDetailsCommand, GoodsReceivingDetail>();
+            /** Product */
+            CreateMap<CreateProductCommand, Product>();
+            CreateMap<UpdateProductCommand, Product>();
         }
     }
 }

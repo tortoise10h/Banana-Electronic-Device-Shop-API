@@ -16,7 +16,6 @@ using src.CQRS.Products.Queries;
 
 namespace api.Controllers.V1
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Sale,WarehouseKeeper,WarehouseKeeperManager,Boss")]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -26,7 +25,7 @@ namespace api.Controllers.V1
             _mediator = mediator;
         }
 
-        [Authorize(Roles = "Admin,Boss")]
+        [Authorize(Roles = "Admin")]
         [HttpPost(ApiRoutes.Product.Create)]
         public async Task<IActionResult> Create([FromBody] CreateProductCommand command)
         {
@@ -59,15 +58,15 @@ namespace api.Controllers.V1
             );
         }
 
-        [HttpGet(ApiRoutes.Product.GetBySku)]
-        public async Task<IActionResult> GetBySku([FromRoute] string sku)
+        [HttpGet(ApiRoutes.Product.GetById)]
+        public async Task<IActionResult> GetById([FromRoute] int productId)
         {
-            var query = new GetProductBySkuQuery(sku);
+            var query = new GetProductByIdQuery(productId);
             var result = await _mediator.Send(query);
 
             return result.Match<IActionResult>(
-                productRespons => Ok(new Response<ProductResponse>(
-                    productRespons
+                productResponse => Ok(new Response<ProductResponse>(
+                    productResponse
                 )),
                 exp =>
                 {
@@ -76,13 +75,30 @@ namespace api.Controllers.V1
             );
         }
 
-        [Authorize(Roles = "Admin,Boss")]
+        [Authorize(Roles = "Admin")]
         [HttpPut(ApiRoutes.Product.Update)]
         public async Task<IActionResult> Update(
             [FromRoute] int productId,
             [FromBody] UpdateProductCommand command)
         {
             command.Id = productId;
+            var result = await _mediator.Send(command);
+
+            return result.Match<IActionResult>(
+                productResponse => NoContent(),
+                exp =>
+                {
+                    throw exp;
+                }
+            );
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete(ApiRoutes.Product.Delete)]
+        public async Task<IActionResult> Delete(
+            [FromRoute] int productId)
+        {
+            DeleteProductCommand command = new DeleteProductCommand(productId);
             var result = await _mediator.Send(command);
 
             return result.Match<IActionResult>(

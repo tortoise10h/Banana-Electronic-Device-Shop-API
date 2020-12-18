@@ -49,14 +49,14 @@ namespace api.Migrations
                         new
                         {
                             Id = "b979036b-d165-4bea-b6b6-16b22a3f54dd",
-                            ConcurrencyStamp = "14513bd3-bdad-43ab-9b33-b8a842241f3b",
+                            ConcurrencyStamp = "b883847b-027c-4256-b84f-f7022cbdca07",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "5ce20f05-c625-43fc-ae25-a7514e9520db",
-                            ConcurrencyStamp = "1bec178a-6d77-492b-954a-0db8750770a2",
+                            ConcurrencyStamp = "ef732901-ff5e-4e55-998e-9487dcab50d5",
                             Name = "Customer",
                             NormalizedName = "customer"
                         });
@@ -291,7 +291,7 @@ namespace api.Migrations
                         {
                             Id = "308da0db-e863-4814-8930-de3540e5406d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6e62730a-f796-4818-a65a-757d0f849afa",
+                            ConcurrencyStamp = "4a81a817-f68b-498d-9abb-e66da37d614d",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tortoise10h@gmail.com",
                             EmailConfirmed = true,
@@ -300,7 +300,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TORTOISE10H@GMAIL.COM",
                             NormalizedUserName = "TORTOISE10H@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBtneNX+QFEQLpqhFZFSh/dzRjlU2LkmtbNraCZfeQv1sH7wz4L+gvcQ024Qt6i27A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENPACgqbZLxJJt2fMh7Wo/nfwyChPVB8xIUCcIPnpruW1DI3z7CQ+NjfOQIj0FG0LA==",
                             PhoneNumber = "0397097276",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -311,7 +311,7 @@ namespace api.Migrations
                         {
                             Id = "927e4f6a-62ed-4e13-b002-7e133eb47bbc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "19e98eb4-b576-4cd9-9ebd-c9fa80cb89c9",
+                            ConcurrencyStamp = "294d732c-8e03-43d7-8703-b9fb1b777e1a",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "minhminion2015@gmail.com",
                             EmailConfirmed = true,
@@ -320,7 +320,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "MINHMINION2015@GMAIL.COM",
                             NormalizedUserName = "MINHMINION2015@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMLI/Q2mmMRBMxQUWrgCte2YDkOJxNMeRETdWpG943k+XuoAzYagb5I3Ua9QwI1/YQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPqbd54ZBv1YeY9/OYkGVmj7sDHOTwWPsaGzR+zjAuSxmW0EOfn/8p5o4bQDDF6HwA==",
                             PhoneNumber = "0901234576",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -331,7 +331,7 @@ namespace api.Migrations
                         {
                             Id = "e7610feb-110c-47d0-9a88-1bfdc12742a4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6c59e38b-df06-4c3a-a500-c1aa502d4b42",
+                            ConcurrencyStamp = "6e85379f-12e9-47af-89cc-8f56eca73ad8",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "nahntvt@gmail.com",
                             EmailConfirmed = true,
@@ -340,7 +340,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "NAHNTVT@GMAIL.COM",
                             NormalizedUserName = "NAHNTVT@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDP6eQuFLAqCHH32dQ7/lnI1Uw+kWLGvxPy5sOoJ84fKFE0fCyBmrah1qdUVatpevA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAdsvlYt1EtPaljgKS8FpSWwOw/1HARfHzUXFpgscyVoQUo1QGyVKMI6vJx9beWKpg==",
                             PhoneNumber = "0901234581",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -351,7 +351,7 @@ namespace api.Migrations
                         {
                             Id = "e9012ef1-cd3c-49a1-8726-7f8f8aba9f98",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dcdf4a7a-03b9-464a-b836-9aae2c929482",
+                            ConcurrencyStamp = "ba493690-af2a-4775-930f-812ce433438c",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "hoailinhkt2015@gmail.com",
                             EmailConfirmed = true,
@@ -360,7 +360,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "HOAILINHKT2015@GMAIL.COM",
                             NormalizedUserName = "HOAILINHKT2015@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKmrBsJEdhOYfiMAMtTZcWj1uHNn/KuIyxr+JecEawKQoZ+FxTm9zFPJurqPFHwkhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDT6/nr99nTU9rDWgxEeBBLOOF+ZlpNwq48HYWJEdnKkdotvahCGS8XEIyTQ353Neg==",
                             PhoneNumber = "0901234586",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -371,7 +371,7 @@ namespace api.Migrations
                         {
                             Id = "3b488e0f-eb92-4994-a555-cbe4ecdf3672",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6be168ed-2b47-4b0e-95be-48a81a7b9533",
+                            ConcurrencyStamp = "e1fe19a0-6f57-42ff-8952-c08c123d6995",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ngtanhu99@gmail.com",
                             EmailConfirmed = true,
@@ -380,7 +380,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "NGTANHU99@GMAIL.COM",
                             NormalizedUserName = "NGTANHU99@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELZTX2Pg1JtetzE4chbdDyyr4Y5YL1LbfLbYRGwmEXjmxV5veOq1EQD9GWJMNLryXQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOp7JOlxKFGzBP0aFfrLLMOSPe4m2fwRrN9w7neOBN7wPutp1sBVO/xQ0u2J2Uog0w==",
                             PhoneNumber = "0764928878",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -391,7 +391,7 @@ namespace api.Migrations
                         {
                             Id = "52999f6b-a605-45b0-b98f-b8880fc46027",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f9c0a3e6-cd91-4409-b22c-71fabdc1d818",
+                            ConcurrencyStamp = "26b18c63-2e1a-415f-a07f-4bff711e2de8",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "luubaominh@gmail.com",
                             EmailConfirmed = true,
@@ -400,7 +400,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "LUUBAOMINH@GMAIL.COM",
                             NormalizedUserName = "LUUBAOMINH@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA72jBafJ+2wd4o8eZxWusbFaa8Rtrseng462T1Rr47SQxNCOWPs7z0/SrTPkMFKnA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDFp1Nd+Cdi8jexAhLeHV63LnP4wqGD0zPX/1LJxZPcIKQQOhiFQ1dmynJDavwjaOw==",
                             PhoneNumber = "0901234564",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -411,7 +411,7 @@ namespace api.Migrations
                         {
                             Id = "39b465e2-c398-494f-bb62-d1eb02aa5471",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a0b9f3f5-e63e-4dc6-bb0a-ace490a59233",
+                            ConcurrencyStamp = "e56d7b94-7e20-4333-8db2-1d91d054a1b2",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "s2nak@gmail.com",
                             EmailConfirmed = true,
@@ -420,7 +420,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "S2NAK@GMAIL.COM",
                             NormalizedUserName = "S2NAK@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOrP/SOKZ1L08Hk2tKktwAb7+8FfB4RvxrTYSGfWgpAxRdfHqZnuudl8Yp85/NpD5A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPShlRGkTnZIbuUcW3zNuJkti4Q+bKoIBwtG+yfmNkYs+e6m7uqpHfDQMC5n5a7IWw==",
                             PhoneNumber = "0901234572",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -431,7 +431,7 @@ namespace api.Migrations
                         {
                             Id = "ce4b2f5c-1fb9-4fe1-945c-20eca474ce16",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "51d48577-8889-4732-9e94-08283a61f4f3",
+                            ConcurrencyStamp = "62a60b35-953b-4996-b916-1d9e6831c82f",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "luongtulinh@gmail.com",
                             EmailConfirmed = true,
@@ -440,7 +440,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "LUONGTULINH@GMAIL.COM",
                             NormalizedUserName = "LUONGTULINH@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECambQDhGNCRqr4SLJKwsr68ByuUOjq8qJleKlKrSsTA7Qv3E4Lwr5+nUjhV4z9rbA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECry14uH+w++d6OEhnbvP/UO/Jd4miJ2CND0+e+RGSIxaUREZKLE8Y024oN+D7cKiQ==",
                             PhoneNumber = "0901234561",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -451,7 +451,7 @@ namespace api.Migrations
                         {
                             Id = "fd9a7449-e604-48c1-a638-c564e17c1bc0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46b039c7-6934-40d0-be78-15db331bd58c",
+                            ConcurrencyStamp = "c501e871-f26f-4b91-aa6e-2095edaef106",
                             CreatedAt = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "truongtuantu@gmail.com",
                             EmailConfirmed = true,
@@ -460,7 +460,7 @@ namespace api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TRUONGTUANTU@GMAIL.COM",
                             NormalizedUserName = "TRUONGTUANTU@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGjURWffJe+798qlYCgM1XnSZm922TmOixkVUd1yP4QbYnuv7WGFs9y7SLW5HKzq3A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEiMaoCaHWpemikMZMepnW/DtNkW60keVym5vNW5P5nb4wVSNw9uGlZtbo8VxkvhZg==",
                             PhoneNumber = "0901234578",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -571,6 +571,85 @@ namespace api.Migrations
                             LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Ghế Gaming"
                         });
+                });
+
+            modelBuilder.Entity("api.Entities.Combo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DiscountPercent")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PriceForSale")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Combos");
+                });
+
+            modelBuilder.Entity("api.Entities.ComboDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ComboId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComboId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ComboDetails");
                 });
 
             modelBuilder.Entity("api.Entities.GoodsDeliveryDetail", b =>
@@ -696,7 +775,7 @@ namespace api.Migrations
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
-                    b.Property<double>("UniPrice")
+                    b.Property<double>("UnitPrice")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -874,6 +953,9 @@ namespace api.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("SKU")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
 
@@ -882,6 +964,78 @@ namespace api.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100% Màu sắc: TRANSPARENT SILVER ",
+                            IsDeleted = false,
+                            LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Laptop Asus D509DA EJ116T",
+                            Price = 9300000.0,
+                            Quantity = 20,
+                            SKU = "D509DA",
+                            Unit = "Cái"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Nhà sản xuất : Dell Xuất xứ : Chính hãng Bảo hành : 12 Tháng Tình trạng : Mới 100%",
+                            IsDeleted = false,
+                            LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Laptop Dell Inspiron 14 5406 N4I5047W",
+                            Price = 25000000.0,
+                            Quantity = 13,
+                            SKU = "N4I5047W",
+                            Unit = "Cái"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100%",
+                            IsDeleted = false,
+                            LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Laptop ASUS D409DA EK499T",
+                            Price = 9690000.0,
+                            Quantity = 39,
+                            SKU = "D409DA",
+                            Unit = "Cái"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100%",
+                            IsDeleted = false,
+                            LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Laptop ASUS D409DA EK499T",
+                            Price = 9690000.0,
+                            Quantity = 39,
+                            SKU = "D409DC",
+                            Unit = "Cái"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Với kinh phí dưới 10 triệu đồng nhưng lại cần build một chiếc pc chất lượng nhằm hỗ trợ công việc. Đặc biệt, đáp ứng được nhu cầu giải trí với các tựa game đình đám. <br/> GVN Titan 10 M  sẽ là một trong những sự lựa chọn tốt nhất trong phân khúc dưới 10 triệu đồng bạn không nên bỏ qua.",
+                            IsDeleted = false,
+                            LastModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "GVN Titan 10 M",
+                            Price = 10500000.0,
+                            Quantity = 39,
+                            SKU = "D409DAEK499T",
+                            Unit = "Cái"
+                        });
                 });
 
             modelBuilder.Entity("api.Entities.QuantityLog", b =>
@@ -970,6 +1124,21 @@ namespace api.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("api.Entities.ComboDetail", b =>
+                {
+                    b.HasOne("api.Entities.Combo", "Combo")
+                        .WithMany()
+                        .HasForeignKey("ComboId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("api.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("api.Entities.GoodsDeliveryDetail", b =>
                 {
                     b.HasOne("api.Entities.GoodsDeliveryNote", "GoodsDeliveryNote")
@@ -1047,7 +1216,7 @@ namespace api.Migrations
             modelBuilder.Entity("api.Entities.QuantityLog", b =>
                 {
                     b.HasOne("api.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("QuantityLogs")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

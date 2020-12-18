@@ -13,47 +13,46 @@ using System.Threading.Tasks;
 
 namespace api.CQRS.Products.Queries
 {
-    public class GetProductBySkuQuery : IRequest<Result<ProductResponse>>
+    public class GetProductByIdQuery : IRequest<Result<ProductResponse>>
     {
-        public GetProductBySkuQuery(string sku)
+        public GetProductByIdQuery(int id)
         {
-            SKU = sku;
+            Id = id;
         }
-        public string SKU { get; set; }
+        public int Id { get; set; }
     }
 
-    public class GetProductBySkuHandler : IRequestHandler<GetProductBySkuQuery, Result<ProductResponse>>
+    public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, Result<ProductResponse>>
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;
 
-        public GetProductBySkuHandler(IMapper mapper, DataContext context)
+        public GetProductByIdHandler(IMapper mapper, DataContext context)
         {
             _mapper = mapper;
             _context = context;
         }
 
         public async Task<Result<ProductResponse>> Handle(
-            GetProductBySkuQuery request,
+            GetProductByIdQuery request,
             CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            // var product = await _context.Products
-            //     .Include(p => p.ProductCategory)
-            //     .Include(p => p.ProductUnits)
-            //     .SingleOrDefaultAsync(
-            //         p => p.SKU == request.SKU);
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.QuantityLogs)
+                .SingleOrDefaultAsync(
+                    p => p.Id == request.Id);
 
-            // if (product == null)
-            // {
-            //     return new Result<ProductResponse>(
-            //         new NotFoundException()
-            //     );
-            // }
+            if (product == null)
+            {
+                return new Result<ProductResponse>(
+                    new NotFoundException()
+                );
+            }
 
-            // return new Result<ProductResponse>(
-            //     _mapper.Map<ProductResponse>(product)
-            // );
+            return new Result<ProductResponse>(
+                _mapper.Map<ProductResponse>(product)
+            );
         }
     }
 }

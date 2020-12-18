@@ -34,15 +34,14 @@ namespace src.CQRS.Products.Queries
 
         public async Task<Result<PagedResponse<ProductResponse>>> Handle(GetAllProductsQuery query, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            // var queryable = _context.Products.AsQueryable();
-            // queryable = queryable
-            //     .Include(p => p.ProductCategory);
-            // var result = await _paginationHelper.Paginate<E.Product, ProductResponse>(
-            //     queryable, query
-            // );
+            var queryable = _context.Products.AsQueryable();
+            queryable = queryable
+                .Include(p => p.Category);
+            var result = await _paginationHelper.Paginate<E.Product, ProductResponse>(
+                queryable, query
+            );
 
-            // return result;
+            return result;
         }
     }
 }
