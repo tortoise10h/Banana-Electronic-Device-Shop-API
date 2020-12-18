@@ -19,12 +19,10 @@ namespace api.CQRS.Products.Commands.CreateProducts
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string DefaultUnit { get; set; }
-        public double? PurchasePrice { get; set; }
+        public string Unit { get; set; }
+        public string SKU { get; set; }
         public double Price { get; set; }
-        public int ProductCategoryId { get; set; }
-        public int? MinQuantity { get; set; }
-        public int? MaxQuantity { get; set; }
+        public int CategoryId { get; set; }
     }
 
     public class CreateProductHandler : IRequestHandler<CreateProductCommand, Result<ProductResponse>>
@@ -44,39 +42,41 @@ namespace api.CQRS.Products.Commands.CreateProducts
             CreateProductCommand request,
             CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            // /** Make sure the category of product is existed */
-            // var productCategory = await _context.ProductCategories
-            //     .SingleOrDefaultAsync(
-            //         pc => pc.Id == request.ProductCategoryId);
-            // if (productCategory == null)
-            // {
-            //     return new Result<ProductResponse>(
-            //         new NotFoundException()
-            //     );
-            // }
+            /** Make sure the category of product is existed */
+            var category = await _context.Categories
+                .SingleOrDefaultAsync(
+                    x => x.Id == request.CategoryId);
+            if (category == null)
+            {
+                return new Result<ProductResponse>(
+                    new NotFoundException()
+                );
+            }
 
-            // var product = _mapper.Map<E.Product>(request);
-            // product.Status = ProductStatus.Available;
+            /** Make sure SKU is unique */
+            var existedProductWithSku = await _context.Products
+                .SingleOrDefaultAsync(x => x.SKU == request.SKU);
+            if (existedProductWithSku != null)
+            {
+                return new Result<ProductResponse>(
+                    new BadRequestException(new ApiError("Mã SKU của sản phẩm đã tồn tại"))
+                );
+            }
 
-            // await _context.Products.AddAsync(product);
-            // var created = await _context.SaveChangesAsync();
-            // if (created > 0)
-            // {
-            //     /** Generate SKU for product */
-            //     product.SKU = _productsService.GenerateProductSKU(
-            //         productCategory.Name, product.Id);
-            //     _context.Products.Update(product);
-            //     await _context.SaveChangesAsync();
+            var product = _mapper.Map<E.Product>(request);
 
-            //     return new Result<ProductResponse>(
-            //         _mapper.Map<ProductResponse>(product)
-            //     );
-            // }
+            await _context.Products.AddAsync(product);
+            var created = await _context.SaveChangesAsync();
+            if (created > 0)
+            {
+                return new Result<ProductResponse>(
+                    _mapper.Map<ProductResponse>(product)
+                );
+            }
 
-            // return new Result<ProductResponse>(
-            //     new BadRequestException(new ApiError("Tạo sản phẩm thất bại, xin thử lại"))
-            // );
+            return new Result<ProductResponse>(
+                new BadRequestException(new ApiError("Tạo sản phẩm thất bại, xin thử lại"))
+            );
         }
     }
 }

@@ -10,6 +10,7 @@ namespace api.Contracts.V1.ResponseModels.GoodsReceivingNotes
     public class GoodsReceivingNoteResponse
     {
         public int Id { get; set; }
+        // public GoodsReceivingNoteStatus status { get; set; }
         public string SupplierName { get; set; }
         public string Description { get; set; }
         public double TotalPrice { get; set; }

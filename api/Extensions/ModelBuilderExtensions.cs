@@ -336,6 +336,65 @@ namespace api.Extensions
                         Name = "Ghế Gaming"
                     }
                 );
+
+            modelBuilder.Entity<Product>()
+                .HasData(
+                    new Product
+                    {
+                        Id = 1,
+                        Name = "Laptop Asus D509DA EJ116T",
+                        Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100% Màu sắc: TRANSPARENT SILVER ",
+                        Unit = "Cái",
+                        Price = 9300000,
+                        SKU = "D509DA",
+                        Quantity = 20,
+                        CategoryId = 1
+                    },
+                    new Product
+                    {
+                        Id = 2,
+                        Name = "Laptop Dell Inspiron 14 5406 N4I5047W",
+                        Description = "Nhà sản xuất : Dell Xuất xứ : Chính hãng Bảo hành : 12 Tháng Tình trạng : Mới 100%",
+                        Unit = "Cái",
+                        Price = 25000000,
+                        SKU = "N4I5047W",
+                        Quantity = 13,
+                        CategoryId = 1
+                    },
+                    new Product
+                    {
+                        Id = 3,
+                        Name = "Laptop ASUS D409DA EK499T",
+                        Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100%",
+                        Unit = "Cái",
+                        Price = 9690000,
+                        SKU = "D409DA",
+                        Quantity = 39,
+                        CategoryId = 1
+                    },
+                    new Product
+                    {
+                        Id = 4,
+                        Name = "Laptop ASUS D409DA EK499T",
+                        Description = "Nhà sản xuất : ASUS Xuất xứ : Chính hãng Bảo hành : 24 Tháng Tình trạng : Mới 100%",
+                        Unit = "Cái",
+                        Price = 9690000,
+                        SKU = "D409DC",
+                        Quantity = 39,
+                        CategoryId = 1
+                    },
+                    new Product
+                    {
+                        Id = 5,
+                        Name = "GVN Titan 10 M",
+                        Description = "Với kinh phí dưới 10 triệu đồng nhưng lại cần build một chiếc pc chất lượng nhằm hỗ trợ công việc. Đặc biệt, đáp ứng được nhu cầu giải trí với các tựa game đình đám. <br/> GVN Titan 10 M  sẽ là một trong những sự lựa chọn tốt nhất trong phân khúc dưới 10 triệu đồng bạn không nên bỏ qua.",
+                        Unit = "Cái",
+                        Price = 10500000,
+                        SKU = "D409DAEK499T",
+                        Quantity = 39,
+                        CategoryId = 2
+                    }
+                );
         }
     }
 }

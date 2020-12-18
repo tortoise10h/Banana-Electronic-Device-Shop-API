@@ -10,7 +10,7 @@ namespace api.Contracts.V1.ResponseModels.GoodsDeliveryNotes
     public class GoodsDeliveryNoteResponse
     {
         public int Id { get; set; }
-        public GoodsDeliveryNoteStatus Status { get; set; }
+        // public GoodsDeliveryNoteStatus Status { get; set; }
         public string Description { get; set; }
         public string ExceptionReason { get; set; }
         public int OrderId { get; set; }

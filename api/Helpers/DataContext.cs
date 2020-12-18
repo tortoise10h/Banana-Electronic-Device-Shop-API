@@ -16,13 +16,15 @@ namespace api.Helpers
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Combo> Combos { get; set; }
+        public DbSet<ComboDetail> ComboDetails { get; set; }
+        public DbSet<QuantityLog> QuantityLogs { get; set; }
         public DbSet<GoodsReceivingNote> GoodsReceivingNotes { get; set; }
         public DbSet<GoodsReceivingDetail> GoodsReceivingDetails { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<GoodsDeliveryNote> GoodsDeliveryNotes { get; set; }
         public DbSet<GoodsDeliveryDetail> GoodsDeliveryDetails { get; set; }
-        public DbSet<QuantityLog> QuantityLogs { get; set; }
 
         protected readonly IConfiguration Configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;

@@ -18,13 +18,10 @@ namespace api.CQRS.Products.Commands.UpdateProducts
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string DefaultUnit { get; set; }
-        public double PurchasePrice { get; set; }
+        public string Unit { get; set; }
+        public string SKU { get; set; }
         public double Price { get; set; }
-        public ProductStatus Status { get; set; }
-        public int ProductCategoryId { get; set; }
-        public int? MinQuantity { get; set; }
-        public int? MaxQuantity { get; set; }
+        public int CategoryId { get; set; }
     }
 
     public class UpdateProductHandler : IRequestHandler<UpdateProductCommand, Result<ProductResponse>>
@@ -38,50 +35,62 @@ namespace api.CQRS.Products.Commands.UpdateProducts
             _mapper = mapper;
         }
 
-        public async Task<Result<ProductResponse>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Result<ProductResponse>> Handle(
+            UpdateProductCommand request,
+            CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            // var product = await _context.Products
-            //     .SingleOrDefaultAsync(
-            //         p => p.Id == request.Id
-            //     );
-            // if (product == null)
-            // {
-            //     return new Result<ProductResponse>(
-            //         new NotFoundException()
-            //     );
-            // }
+            var product = await _context.Products
+                .SingleOrDefaultAsync(
+                    p => p.Id == request.Id
+                );
+            if (product == null)
+            {
+                return new Result<ProductResponse>(
+                    new NotFoundException()
+                );
+            }
 
-            // /** That's mean user want to update category of product */
-            // if (request.ProductCategoryId != product.ProductCategoryId)
-            // {
-            //     var productCategory = await _context.ProductCategories
-            //         .SingleOrDefaultAsync(pc => pc.Id == request.ProductCategoryId);
+            /** That's mean user want to update category of product */
+            if (request.CategoryId != product.CategoryId)
+            {
+                var productCategory = await _context.Categories
+                    .SingleOrDefaultAsync(pc => pc.Id == request.CategoryId);
 
-            //     if (productCategory == null)
-            //     {
-            //         return new Result<ProductResponse>(
-            //             new NotFoundException()
-            //         );
-            //     }
-            // }
+                if (productCategory == null)
+                {
+                    return new Result<ProductResponse>(
+                        new NotFoundException()
+                    );
+                }
+            }
 
-            // _mapper.Map<UpdateProductCommand, E.Product>(request, product);
+            /** Make sure SKU is unique */
+            var existedProductWithSku = await _context.Products
+                .SingleOrDefaultAsync(x => x.SKU == request.SKU &&
+                    x.Id != product.Id);
+            if (existedProductWithSku != null)
+            {
+                return new Result<ProductResponse>(
+                    new BadRequestException(new ApiError("Mã SKU đã được sản phẩm khác sử dụng"))
+                );
+            }
 
-            // _context.Products.Update(product);
-            // var updated = await _context.SaveChangesAsync();
+            _mapper.Map<UpdateProductCommand, E.Product>(request, product);
 
-            // if (updated > 0)
-            // {
-            //     return new Result<ProductResponse>(
-            //         _mapper.Map<ProductResponse>(product)
-            //     );
-            // }
+            _context.Products.Update(product);
+            var updated = await _context.SaveChangesAsync();
 
-            // return new Result<ProductResponse>(
-            //     new BadRequestException(
-            //         new ApiError("Chỉnh sửa thông tin sản phẩm thất bại, xin thử lại"))
-            // );
+            if (updated > 0)
+            {
+                return new Result<ProductResponse>(
+                    _mapper.Map<ProductResponse>(product)
+                );
+            }
+
+            return new Result<ProductResponse>(
+                new BadRequestException(
+                    new ApiError("Chỉnh sửa thông tin sản phẩm thất bại, xin thử lại"))
+            );
         }
     }
 }
