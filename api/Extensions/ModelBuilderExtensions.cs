@@ -394,6 +394,109 @@ namespace api.Extensions
                         SKU = "D409DAEK499T",
                         Quantity = 39,
                         CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 6,
+                        Name = "GVN Ghosts S",
+                        Description = "Trong tầm giá 23 triệu đồng GVN Ghosts S sẽ là một trong những sự lựa chọn tốt nhất mang đến những trải nghiệm với các dòng game đồi hỏi đồ họa cao. Vừa kinh tế vừa mang lại hiệu năng cao.",
+                        Unit = "Cái",
+                        Price = 21290000,
+                        SKU = "D409DAE9T",
+                        Quantity = 12,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 7,
+                        Name = "Core i5 9400F / 9M / 2.9GHz / 6 nhân 6 luồng",
+                        Description = "Core i5 9400F / 9M / 2.9GHz / 6 nhân 6 luồng",
+                        Unit = "Cái",
+                        Price = 3490000,
+                        SKU = "i59m9400F",
+                        Quantity = 12,
+                        CategoryId = 4
+                    },
+                    new Product
+                    {
+                        Id = 8,
+                        Name = "( 650W ) Nguồn máy tính SilverStone ST65F-ES230 80 Plus",
+                        Description = "( 650W ) Nguồn máy tính SilverStone ST65F-ES230 80 Plus",
+                        Unit = "Cái",
+                        Price = 1190000,
+                        SKU = "ST65F-ES23080Plus",
+                        Quantity = 30,
+                        CategoryId = 4
+                    },
+                    new Product
+                    {
+                        Id = 9,
+                        Name = "Gigabyte SSD 240GB 2.5\" Sata 3 ( GP-GSTFS31240GNTD )",
+                        Description = "Gigabyte SSD 240GB 2.5\" Sata 3 ( GP-GSTFS31240GNTD )",
+                        Unit = "Cái",
+                        Price = 750000,
+                        SKU = "GP-GSTFS31240GNTD",
+                        Quantity = 22,
+                        CategoryId = 4
+                    },
+                    new Product
+                    {
+                        Id = 10,
+                        Name = "Màn hình LG 22MN430M-B 22\" IPS 75Hz FreeSync",
+                        Description = "Màn hình LG 22MN430M-B 22\" IPS 75Hz FreeSync",
+                        Unit = "Cái",
+                        Price = 2890000,
+                        SKU = "22MN430M-B",
+                        Quantity = 22,
+                        CategoryId = 5
+                    },
+                    new Product
+                    {
+                        Id = 11,
+                        Name = "Màn hình LG 24MP88HV-S 24\" IPS không viền",
+                        Description = "Màn hình LG 24MP88HV-S 24\" IPS không viền",
+                        Unit = "Cái",
+                        Price = 3890000,
+                        SKU = "24MP88HV-S",
+                        Quantity = 10,
+                        CategoryId = 5
+                    }
+                );
+
+            modelBuilder.Entity<Combo>()
+                .HasData(
+                    new Combo
+                    {
+                        Id = 1,
+                        Name = "Combo noel",
+                        DiscountPercentage = 5,
+                        Price = 14380000,
+                        PriceForSale = 13661000,
+                    }
+                );
+
+            modelBuilder.Entity<ComboDetail>()
+                .HasData(
+                    new ComboDetail
+                    {
+                        Id = 1,
+                        ProductId = 11,
+                        ComboId = 1,
+                        Quantity = 1,
+                    },
+                    new ComboDetail
+                    {
+                        Id = 2,
+                        ProductId = 8,
+                        ComboId = 1,
+                        Quantity = 1,
+                    },
+                    new ComboDetail
+                    {
+                        Id = 3,
+                        ProductId = 1,
+                        ComboId = 1,
+                        Quantity = 1,
                     }
                 );
         }

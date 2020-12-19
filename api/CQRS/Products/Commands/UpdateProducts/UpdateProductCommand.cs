@@ -75,6 +75,8 @@ namespace api.CQRS.Products.Commands.UpdateProducts
                 );
             }
 
+            // TODO: Recalculate the price of all combos which contain this product ~_~
+
             _mapper.Map<UpdateProductCommand, E.Product>(request, product);
 
             _context.Products.Update(product);
