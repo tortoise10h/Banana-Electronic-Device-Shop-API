@@ -32,6 +32,18 @@ namespace api.Contracts.V1
             public const string Delete = Base + "/categories/{categoryId}";
         }
 
+        public static class Combos
+        {
+            public const string GetAll = Base + "/combos";
+            public const string Create = Base + "/combos";
+            public const string Update = Base + "/combos/{comboId}";
+            public const string Delete = Base + "/combos/{comboId}";
+            public const string GetById = Base + "/combos/{comboId}";
+            public const string AddProductsToCombo = Base + "/combos/{comboId}/comboDetails";
+            public const string UpdateProductInCombo = Base + "/combos/{comboId}/comboDetails/{comboDetailId}";
+            public const string DeleteProductInCombo = Base + "/combos/{comboId}/comboDetails/{comboDetailId}";
+        }
+
         public static class GoodsReceivingNotes
         {
             public const string CreateGoodsReceivingNotes = Base + "/goodsReceivingNotes";

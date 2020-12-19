@@ -6,6 +6,7 @@ using api.Contracts.V1.ResponseModels.GoodsReceivingNotes;
 using api.Contracts.V1.ResponseModels.Orders;
 using api.Contracts.V1.ResponseModels.GoodsDeliveryNotes;
 using api.Contracts.V1.ResponseModels.Categories;
+using api.Contracts.V1.ResponseModels.Combos;
 
 namespace api.MapperProfiles
 {
@@ -30,6 +31,10 @@ namespace api.MapperProfiles
             CreateMap<GoodsDeliveryNote, GoodsDeliveryNoteResponse>();
 
             CreateMap<GoodsDeliveryDetail, GoodsDeliveryDetailResponse>();
+
+            CreateMap<Combo, ComboResponse>();
+
+            CreateMap<ComboDetail, ComboDetailResponse>();
         }
     }
 }
