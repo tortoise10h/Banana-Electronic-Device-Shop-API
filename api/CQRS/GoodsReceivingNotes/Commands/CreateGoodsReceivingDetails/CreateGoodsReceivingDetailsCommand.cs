@@ -92,7 +92,7 @@ namespace api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails
             foreach (var item in goodsReceivingDetails)
             {
                 item.GoodsReceivingNoteId = request.GoodsReceivingNoteId;
-                item.TotalPrice = item.Quantity * item.TotalPrice;
+                item.TotalPrice = item.Quantity * item.UnitPrice;
                 sum += item.TotalPrice;
             }
 
@@ -104,16 +104,19 @@ namespace api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails
                 p.Quantity += update.Quantity;
             }
 
-            var quantityLogs = _mapper.Map<List<QuantityLog>>(productIds);
+            var quantityLogs = request.Products
+                .Select(x => new QuantityLog
+                {
+                    ProductId = x.ProductId
+                })
+                .ToList();
+
             foreach (var item in quantityLogs)
             {
-                var currentQuantity = products
+                var update = products
                     .FirstOrDefault(x => x.Id == item.ProductId);
 
-                var newQuantity = request.Products
-                    .FirstOrDefault(x => x.ProductId == item.ProductId);
-
-                item.InStock = currentQuantity.Quantity + newQuantity.Quantity;
+                item.InStock = update.Quantity;
             }
 
             goodsReceivingNote.TotalPrice += sum;

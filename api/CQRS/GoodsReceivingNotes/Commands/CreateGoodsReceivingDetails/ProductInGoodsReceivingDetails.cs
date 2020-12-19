@@ -6,7 +6,7 @@ namespace api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public double UniPrice { get; set; }
+        public double UnitPrice { get; set; }
     }
 
     public class ProductInGoodsReceivingDetailsValidator : AbstractValidator<ProductInGoodsReceivingDetails>
@@ -23,7 +23,7 @@ namespace api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails
                 .NotNull()
                     .WithMessage("Số lượng của sản phẩm trong phiếu nhập kho không được để trống");
 
-            RuleFor(x => x.UniPrice)
+            RuleFor(x => x.UnitPrice)
                 .NotNull()
                     .WithMessage("Giá mua của sản phẩm không được để trống")
                 .GreaterThanOrEqualTo(0)

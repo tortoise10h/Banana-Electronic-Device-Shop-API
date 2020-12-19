@@ -90,9 +90,11 @@ namespace api.Controllers.V1
         [HttpPost(ApiRoutes.GoodsReceivingNotes.CreateGoodsReceivingDetails)]
         public async Task<IActionResult> CreateGoodsReceivingDetails
         (
+            [FromRoute] int goodsReceivingNoteId,
             [FromBody] CreateGoodsReceivingDetailsCommand command
         )
         {
+            command.GoodsReceivingNoteId = goodsReceivingNoteId;
             var result = await _mediator.Send(command);
 
             return result.Match<IActionResult>(
