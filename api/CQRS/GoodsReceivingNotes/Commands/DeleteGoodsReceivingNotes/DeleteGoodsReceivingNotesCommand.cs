@@ -59,7 +59,13 @@ namespace api.CQRS.GoodsReceivingNotes.Commands.DeleteGoodsReceivingNotes
                 .Where(p => productIds.Contains(p.Id))
                 .ToListAsync();
 
-            var quantityLogs = _mapper.Map<List<QuantityLog>>(productIds);
+            var quantityLogs = goodsReceivingDetails
+                .Select(x => new QuantityLog
+                {
+                    ProductId = x.ProductId
+                })
+                .ToList();
+
             foreach (var item in quantityLogs)
             {
                 var currentQuantity = products

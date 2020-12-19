@@ -1,4 +1,5 @@
-﻿using api.Entities;
+﻿using api.CQRS.GoodsReceivingNotes.Commands.CreateGoodsReceivingDetails;
+using api.Entities;
 using AutoMapper;
 
 namespace api.MapperProfiles
@@ -7,6 +8,9 @@ namespace api.MapperProfiles
     {
         public DtoAndEntitiesProfile()
         {
+            /** ProductInGoodsReceivingNote - GoodsReceivingDetail */
+            CreateMap<ProductInGoodsReceivingDetails, GoodsReceivingDetail>();
+            CreateMap<GoodsReceivingDetail, ProductInGoodsReceivingDetails>();
         }
     }
 }
