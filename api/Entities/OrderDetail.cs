@@ -15,6 +15,7 @@ namespace api.Entities
         public string Description { get; set; }
         public double UnitPrice { get; set; }
         public double TotalPrice { get; set; }
+        public int? ComboId { get; set; }
 
         public Product Product { get; set; }
         public Order Order { get; set; }
