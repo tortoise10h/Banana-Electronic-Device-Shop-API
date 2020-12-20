@@ -4,6 +4,7 @@ using api.Contracts.V1;
 using api.Contracts.V1.ResponseModels;
 using api.Contracts.V1.ResponseModels.Orders;
 using api.CQRS.Orders.Commands.CreateOrders;
+using api.CQRS.Orders.Commands.DeleteOrders;
 using api.CQRS.Orders.Commands.UpdateOrders;
 using api.CQRS.Orders.Queries;
 using MediatR;
@@ -89,54 +90,22 @@ namespace api.Controllers.V1
             );
         }
 
-        // [Authorize(Roles = "Sale,Boss")]
-        // [HttpPost(ApiRoutes.Orders.AddProductsToOrder)]
-        // public async Task<IActionResult> AddProductsToOrder([FromRoute] int orderId, [FromBody] BulkCreateOrderDetailsCommand command)
-        // {
-        //     command.OrderId = orderId;
-        //     var result = await _mediator.Send(command);
+        [Authorize(Roles = "Admin")]
+        [HttpDelete(ApiRoutes.Orders.Delete)]
+        public async Task<IActionResult> Delete(
+            [FromRoute] int orderId
+        )
+        {
+            var delete = new DeleteOrderCommand(orderId);
+            var result = await _mediator.Send(delete);
 
-        //     return result.Match<IActionResult>(
-        //         response => Created("", new Response<List<OrderDetailResponse>>(
-        //             response
-        //         )),
-        //         exp =>
-        //         {
-        //             throw exp;
-        //         }
-        //     );
-        // }
-
-        // [Authorize(Roles = "Sale,Boss")]
-        // [HttpPut(ApiRoutes.Orders.BulkUpdateProductsInOrder)]
-        // public async Task<IActionResult> BulkUpdateProductsInOrder([FromRoute] int orderId, [FromBody] BulkUpdateOrderDetailsCommand command)
-        // {
-        //     command.OrderId = orderId;
-        //     var result = await _mediator.Send(command);
-
-        //     return result.Match<IActionResult>(
-        //         response => NoContent(),
-        //         exp =>
-        //         {
-        //             throw exp;
-        //         }
-        //     );
-        // }
-
-        // [Authorize(Roles = "Sale,Boss")]
-        // [HttpDelete(ApiRoutes.Orders.BulkDeleteProductsInOrder)]
-        // public async Task<IActionResult> BulkDeletePurchaseProposalDetaiils([FromRoute] int orderId, [FromBody] BulkDeleteOrderDetailsCommand command)
-        // {
-        //     command.OrderId = orderId;
-        //     var result = await _mediator.Send(command);
-
-        //     return result.Match<IActionResult>(
-        //         purchaseProposalFormresponses => NoContent(),
-        //         exp =>
-        //         {
-        //             throw exp;
-        //         }
-        //     );
-        // }
+            return result.Match<IActionResult>(
+                response => NoContent(),
+                exp =>
+                {
+                    throw exp;
+                }
+            );
+        }
     }
 }

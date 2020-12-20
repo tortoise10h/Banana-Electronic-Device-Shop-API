@@ -15,6 +15,11 @@ namespace api.CQRS.Orders.Commands.DeleteOrders
 {
     public class DeleteOrderCommand : IRequest<Result<OrderResponse>>
     {
+        public DeleteOrderCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; set; }
     }
 
