@@ -38,7 +38,8 @@ namespace api.Extensions
             /** Order */
             modelBuilder
                 .Entity<Order>()
-                .HasQueryFilter(o => EF.Property<bool>(o, "IsDeleted") == false);
+                .HasQueryFilter(o => EF.Property<bool>(o, "IsDeleted") == false)
+                .Ignore(o => o.Customer);
 
             /** OrderDetail */
             modelBuilder

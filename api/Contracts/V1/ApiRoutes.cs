@@ -48,9 +48,6 @@ namespace api.Contracts.V1
             public const string GetById = Base + "/orders/{orderId}";
             public const string Update = Base + "/orders/{orderId}";
             public const string Delete = Base + "/orders/{orderId}";
-            public const string AddProductsToOrder = Base + "/orders/{orderId}/orderDetails";
-            public const string BulkUpdateProductsInOrder = Base + "/orders/{orderId}/orderDetails/bulkUpdate";
-            public const string BulkDeleteProductsInOrder = Base + "/orders/{orderId}/orderDetails/bulkDelete";
         }
 
         public static class GoodsDeliveryNotes
