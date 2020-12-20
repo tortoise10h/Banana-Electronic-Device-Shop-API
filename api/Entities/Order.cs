@@ -13,7 +13,6 @@ namespace api.Entities
         public string Description { get; set; }
         public string DeliveryAddress { get; set; }
         public double TotalPrice { get; set; }
-        public string CustomerId { get; set; }
 
         public ApplicationUser Customer { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }

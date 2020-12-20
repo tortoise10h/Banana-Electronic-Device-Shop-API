@@ -13,17 +13,10 @@ namespace api.Contracts.V1.ResponseModels.Orders
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public double Quantity { get; set; }
-        public double QuantityNeed { get; set; }
-        public double QuantitySold { get; set; }
-        public double QuantityReturned { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime LastModifiedAt { get; set; }
-        public String LastModifiedBy { get; set; }
-        public double SinglePrice { get; set; }
+        public double UnitPrice { get; set; }
         public double TotalPrice { get; set; }
-
+        public int ComboId { get; set; }
         public ProductResponse Product { get; set; }
     }
 }
