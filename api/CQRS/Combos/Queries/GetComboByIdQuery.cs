@@ -41,7 +41,7 @@ namespace api.CQRS.Combos.Queries
         {
             var combo = await _context.Combos
                 .Include(x => x.ComboDetails)
-                    .ThenInclude(cd => cd.ProductId)
+                    .ThenInclude(cd => cd.Product)
                 .SingleOrDefaultAsync(
                     x => x.Id == request.Id);
 
