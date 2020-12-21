@@ -81,7 +81,7 @@ namespace api.Controllers.V1
             GetComboByIdQuery query = new GetComboByIdQuery(comboId);
             var result = await _mediator.Send(query);
             return result.Match<IActionResult>(
-                data => NoContent(),
+                data => Ok(new Response<ComboResponse>(data)),
                 exp =>
                 {
                     throw exp;
