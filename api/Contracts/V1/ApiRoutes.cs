@@ -22,6 +22,7 @@ namespace api.Contracts.V1
             public const string GetById = Base + "/products/{productId}";
             public const string Update = Base + "/products/{productId}";
             public const string Delete = Base + "/products/{productId}";
+            public const string StatisticQuantityLogByProductId = Base + "/products/{productId}/quantityLogs";
         }
 
         public static class Categories

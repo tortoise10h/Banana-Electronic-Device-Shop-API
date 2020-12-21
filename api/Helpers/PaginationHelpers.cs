@@ -20,6 +20,10 @@ namespace api.Helpers
         Task<PagedResponse<TResponse>> Paginate<TEntity, TResponse>(
             IQueryable<TEntity> queryable,
             PaginationQuery query);
+        PagedResponse<TResponse> CreatePaginatedResponse<TEntity, TResponse>(
+            PaginationQuery query,
+            List<TEntity> entities,
+            int total);
     }
 
     public class PaginationHelpers : IPaginationHelpers
@@ -31,7 +35,7 @@ namespace api.Helpers
             _mapper = mapper;
         }
 
-        private PagedResponse<TResponse> CreatePaginatedResponse<TEntity, TResponse>(
+        public PagedResponse<TResponse> CreatePaginatedResponse<TEntity, TResponse>(
             PaginationQuery query,
             List<TEntity> entities,
             int total)

@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using src.CQRS.Products.Queries;
+using src.CQRS.QuantityLogs.Queries;
 
 namespace api.Controllers.V1
 {
@@ -49,6 +50,26 @@ namespace api.Controllers.V1
 
             return result.Match<IActionResult>(
                 data => Ok(new Response<PagedResponse<ProductResponse>>(
+                    data
+                )),
+                exp =>
+                {
+                    throw exp;
+                }
+            );
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet(ApiRoutes.Product.StatisticQuantityLogByProductId)]
+        public async Task<IActionResult> StatisticQuantityLogByProductId(
+            [FromRoute] int productId,
+            [FromQuery] StatisticQuantityLogOfProductQuery query)
+        {
+            query.ProductId = productId;
+            var result = await _mediator.Send(query);
+
+            return result.Match<IActionResult>(
+                data => Ok(new Response<PagedResponse<QuantityLogResponse>>(
                     data
                 )),
                 exp =>
