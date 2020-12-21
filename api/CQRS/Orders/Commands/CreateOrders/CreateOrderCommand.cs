@@ -38,25 +38,35 @@ namespace api.CQRS.Orders.Commands.CreateOrders
                 .Select(p => p.ProductId)
                 .ToList();
 
-            // Validate product id is unique
-            var distinctProductIds = request.OrderDetails
-                .Select(p => p.ProductId)
-                .Distinct()
+            /** Validate new products must be not duplicated 
+             * (except product in combo and not in combo) */
+            var validProducts = request.OrderDetails
+                .GroupBy(x => new
+                {
+                    x.ProductId,
+                    x.ComboId
+                })
+                .Select(x => x.First())
                 .ToList();
 
-            if (productIds.Count() != distinctProductIds.Count())
+            if (request.OrderDetails.Count() != validProducts.Count())
             {
                 return new Result<OrderResponse>(
                     new BadRequestException(
-                        new ApiError("Mỗi sản phẩm chỉ được thêm vào đơn hàng 1 lần")
+                        new ApiError("Mỗi sản phẩm chỉ được thêm vào đơn hàng một lần")
                     )
                 );
             }
 
-            // Validate products exist
-                var products = await _context.Products
-                    .Where(p => productIds.Contains(p.Id))
-                    .ToListAsync();
+            /** Validate all products must be existed */
+            var distinctProductIds = validProducts
+                .Select(p => p.ProductId)
+                .Distinct()
+                .ToList();
+
+            var products = await _context.Products
+                .Where(p => distinctProductIds.Contains(p.Id))
+                .ToListAsync();
 
             if (distinctProductIds.Count() != products.Count())
             {
