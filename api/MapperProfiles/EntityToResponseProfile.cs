@@ -18,6 +18,8 @@ namespace api.MapperProfiles
 
             CreateMap<Product, ProductResponse>();
 
+            CreateMap<QuantityLog, QuantityLogResponse>();
+
             CreateMap<Category, CategoryResponse>();
 
             CreateMap<GoodsReceivingNote, GoodsReceivingNoteResponse>();
