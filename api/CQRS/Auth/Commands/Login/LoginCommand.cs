@@ -40,13 +40,6 @@ namespace api.CQRS.Auth.Commands.Login
                 );
             }
 
-            if (user != null && user.LockoutEnabled == true)
-            {
-                return new Result<LoginResult>(
-                    new BadRequestException(new ApiError("Tài khoản đã bị khoá"))
-                );
-            }
-
             var userHasValidPassword = await _userManager.CheckPasswordAsync(user, request.Password);
 
             if (!userHasValidPassword)
